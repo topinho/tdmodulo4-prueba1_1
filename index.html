@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css">
+    <title>Modulo 4 - Prueba 1_1</title>
+</head>
+<body>
+    
+    <div id="app">
+        <div class="container">
+            <nav class="level">
+                <p class="title level-item has-text-centered">
+                    Prueba 1_1
+                </p>
+            </nav>
+            <div class="card">
+                <header class="card-header">
+                    <div class="select is-primary" style="width: 100%;">
+                        <select v-model="imagen" style="width: 100%;" v-on:change="getDataImagen(imagen)">
+                            <option v-for="i in galeria" :value="i">{{ i.nombre }}</option>
+                        </select>
+                    </div>
+                </header>
+                <div v-if="ruta" class="card-image">
+                  <figure class="image is-2by1">
+                    <img v-bind:src="ruta">
+                  </figure>
+                </div>
+                <div v-if="cita" class="card-content">
+                  <div class="content">
+                    <div class="columns is-centered">
+                        {{ cita }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/script.js" type="module"></script>
+</html>
